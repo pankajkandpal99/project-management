@@ -86,6 +86,26 @@ ALLOWED_ORIGINS=http://localhost:5173,http://localhost:8800
 
 Running the Application
 
+# Database Seeding
+
+The application includes a comprehensive seed script to populate the database with initial test data. This is especially useful for development and testing purposes.
+
+# Running the Seed Script
+   cd backend
+   npm run seed
+
+What the Seed Script Creates
+   Test User:
+   Email: test@example.com
+   Password: Test@123
+   Sample Projects:
+   2 projects with different statuses (active/completed)
+   Each project contains complete details (title, description, etc.)
+   Sample Tasks:
+   3 tasks per project (total 6 tasks)
+   Tasks with different statuses (todo/in-progress/done)
+   Varied due dates for testing date-related functionality
+
 1. Start the server:
    cd backend
    npm run dev

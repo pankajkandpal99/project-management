@@ -174,9 +174,11 @@ export const ProjectController = {
             },
           ]).session(session);
 
+          type ProjectStatus = keyof typeof defaultResponse.projects;
           projects.forEach((item) => {
-            if (defaultResponse.projects.hasOwnProperty(item._id)) {
-              defaultResponse.projects[item._id] = item.count;
+            const status = item._id as ProjectStatus;
+            if (status in defaultResponse.projects) {
+              defaultResponse.projects[status] = item.count;
             }
           });
         }
@@ -192,9 +194,11 @@ export const ProjectController = {
             },
           ]).session(session);
 
-          tasks.forEach((item) => {
-            if (defaultResponse.tasks.hasOwnProperty(item._id)) {
-              defaultResponse.tasks[item._id] = item.count;
+          type TaskStatus = keyof typeof defaultResponse.tasks;
+          tasks.forEach((item: { _id: string; count: number }) => {
+            const status = item._id as TaskStatus;
+            if (status in defaultResponse.tasks) {
+              defaultResponse.tasks[status] = item.count;
             }
           });
         }
