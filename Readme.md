@@ -48,6 +48,6 @@ A full-featured project management application with user authentication, project
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/project-management-tool.git
+git clone https://github.com/pankajkandpal99/project-management.git
 cd project-management-tool
 ```
